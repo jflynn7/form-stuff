@@ -1,0 +1,70 @@
+<div class="container-fluid page" *ngIf="loggedInUser">
+  <app-tab-set [tabItems]="userService.getUserTabs()" [activeTabTitle]="'Address Details'"></app-tab-set>
+  <div class="row" *ngIf="userForm">
+    <div class="col-xs-12">
+      <app-card [padding]="0" [margin]="0">
+        <div class="row">
+          <div class="col-xs-12 col-md-3 border-right stretch-column">
+            <!-- AVATAR SECTION -->
+            <app-user-profile-avatar-section [user]="loggedInUser"></app-user-profile-avatar-section>
+          </div>
+          <div class="col-xs-12 col-md-9">
+            <div class="row border-right">
+              <h4 class="section-title">Edit Your Address Details</h4>
+              <span class="save hidden-xs" (click)="saveUserProfile()">
+                Save
+              </span>
+            </div>
+            <div class="row border-top">
+              <div class="address-display" [formGroup]="userForm.formGroup">
+                <div class="col-xs-12 col-md-6" formArrayName="addresses" *ngFor="let item of formUtils.getArrayFormControls('addresses', userForm); let i = index;">
+                  <div [formGroupName]="i" class="form-array-container">
+                    <app-form-input
+                      [className]="'form-element margin-right'"
+                      [formGroup]="item"
+                      [formElement]="formUtils.getArrayFormElement(userForm, 'addresses', 'houseNumber')">
+                    </app-form-input>
+                    <app-form-input
+                      [className]="'form-element margin-right'"
+                      [formGroup]="item"
+                      [formElement]="formUtils.getArrayFormElement(userForm, 'addresses', 'street')">
+                    </app-form-input>
+                    <app-form-input
+                      [className]="'form-element margin-right'"
+                      [formGroup]="item"
+                      [formElement]="formUtils.getArrayFormElement(userForm, 'addresses', 'town')">
+                    </app-form-input>
+                    <app-form-input
+                      [className]="'form-element margin-right'"
+                      [formGroup]="item"
+                      [formElement]="formUtils.getArrayFormElement(userForm, 'addresses', 'country')">
+                    </app-form-input>
+                    <app-form-input
+                      [className]="'form-element margin-right'"
+                      [formGroup]="item"
+                      [formElement]="formUtils.getArrayFormElement(userForm, 'addresses', 'postcode')">
+                    </app-form-input>
+                    <span class="form-array-remove" (click)="formUtils.removeFormArrayItem(userForm, 'addresses', i)">Remove</span>
+                    <hr>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row border">
+              <div class="col-xs-12">
+              <button class="btn btn-primary update-button" (click)="formUtils.addNewFormArrayItem(userForm, 'addresses')">Add New Address</button>
+              </div>
+            </div>
+            <div class="row border-top border-left">
+              <div class="col-xs-12 visible-xs-block">
+                <span class="save">
+                  Save
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </app-card>
+    </div>
+  </div>
+</div>

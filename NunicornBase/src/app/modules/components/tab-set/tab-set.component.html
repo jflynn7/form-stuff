@@ -1,0 +1,13 @@
+<app-card [padding]="0">
+  <div class="row tabs">
+    <div class="col-xs-12">
+      <div
+        *ngFor="let tabItem of tabItems"
+        class="col-sm-{{getColumnWidth()}} tab"
+        [ngClass]="{ 'active' : isActive(tabItem.title)}"
+        (click)="tabClicked(tabItem)">
+        {{tabItem.title}}
+      </div>
+    </div>
+  </div>
+</app-card>

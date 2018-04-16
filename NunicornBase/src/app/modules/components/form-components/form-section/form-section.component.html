@@ -1,0 +1,17 @@
+<span *ngIf="!isArrayForm">
+  <app-form-input
+    *ngFor="let formElementKey of formElementList"
+    [formGroup]="formDetails.formGroup"
+    [className]="className"
+    [formElement]="formDetails.get(formElementKey)">
+  </app-form-input>
+</span>
+
+<span *ngIf="isArrayForm && formElements">
+  <app-form-input
+    *ngFor="let formElement of formElements"
+    [formGroup]="formGroup"
+    [className]="className"
+    [formElement]="formElement">
+  </app-form-input>
+</span>

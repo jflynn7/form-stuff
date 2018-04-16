@@ -1,0 +1,56 @@
+.attendee-display {
+
+  padding: 5px 15px;
+  overflow: hidden;
+
+  .avatar-image {
+    display: block;
+    margin: 0 auto;
+    width: 90px;
+    border-radius: 100px;
+    border: 1px solid #ececec;
+    padding: 5px;
+
+    &.collapsed {
+      width: 80px;
+    }
+  }
+
+  .attendee-details {
+    padding: 15px;
+
+    .name {
+      font-weight: bold;
+    }
+
+    .position {
+      font-style: italic;
+    }
+
+    .email {
+      color: grey;
+    }
+
+  }
+}
+
+.hidden {
+  width: 0px;
+}
+
+.attendee-avatar {
+  position: relative;
+
+  .avatar-initials {
+    position: absolute;
+    text-align: center;
+    display: block;
+    top: 25px;
+    color: white;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px black;
+    width: 100%;
+    margin-left: -15px;
+    font-size: 20px;
+  }
+}

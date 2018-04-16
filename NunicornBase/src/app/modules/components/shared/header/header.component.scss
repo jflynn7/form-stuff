@@ -1,0 +1,36 @@
+@import '../../../../../assets/variables';
+
+.header {
+  display: block;
+  background-color: dodgerblue;
+  color: white;
+  padding: 5px;
+  width: 100%;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+
+  .header-content {
+    padding: $default-gutter;
+  }
+
+  .logout {
+    font-size: 9px;
+    cursor: pointer;
+
+    &:hover {
+      font-weight: bold;
+    }
+  }
+
+  .search-button {
+    height: 27px;
+    font-size: 10px;
+    background-color: #f9f9f9;
+    color: dodgerblue;
+    margin: 14px 15px 15px -10px;
+    float: right;
+    border: 1px solid dodgerblue;
+  }
+}
+

@@ -1,0 +1,23 @@
+.tabs {
+  margin-top: -10px;
+
+  .tab {
+    padding: 10px;
+    text-align: center;
+
+    &.active {
+      background-color: dodgerblue;
+      color: white;
+
+      &:hover {
+        background-color: dodgerblue;
+        color: white;
+      }
+    }
+
+    &:hover {
+      background-color: #ececec;
+      cursor: pointer;
+    }
+  }
+}

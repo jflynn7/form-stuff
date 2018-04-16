@@ -1,0 +1,29 @@
+<div class="note-item">
+  <div class="row">
+    <div class="col-xs-1 note-attendee">
+      <img class="avatar-image" src="{{noteItem.attendee.avatar}}"/>
+      <span class="initials">{{getInitials(noteItem.attendee)}}</span>
+    </div>
+    <div class="col-xs-11">
+      <div class="note" [ngClass]="{'with-action' : !!noteItem.action}">
+        {{noteItem.note}}
+      </div>
+    </div>
+  </div>
+  <div *ngIf="noteItem.action" class="action row">
+    <div class="col-xs-1">
+    </div>
+    <div class="col-xs-11">
+      <div class="note-action">
+        {{noteItem.action}}
+        <i class="action-icon material-icons">error_outline</i>
+      </div>
+    </div>
+  </div>
+  <div class="row action-bar">
+    <div class="col-xs-12">
+      <span class="action" (click)="editNote(noteIndex)">Edit</span> |
+      <span class="action" (click)="deleteNote(noteIndex)">Delete</span>
+    </div>
+  </div>
+</div>

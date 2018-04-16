@@ -1,0 +1,48 @@
+<!-- Login Form -->
+<div *ngIf="isLogin">
+  <div class="row">
+    <div class="col-xs-12">
+      <app-form-element [formElement]="loginForm.get('username')" [formGroup]="loginForm.formGroup"></app-form-element>
+      <app-form-element [formElement]="loginForm.get('password')" [formGroup]="loginForm.formGroup"></app-form-element>
+    </div>
+  </div>
+  <div class="row margin-top">
+    <div class="col-xs-6">
+      <app-form-element [formElement]="loginForm.get('rememberMe')" [formGroup]="loginForm.formGroup"></app-form-element>
+    </div>
+    <div class="col-xs-6">
+      <span class="forgot-link" (click)="toggleFormDisplay()">Forgotten Password?</span>
+    </div>
+  </div>
+  <div class="row buttons">
+    <div class="col-xs-6">
+      <button class="btn btn-primary btn-block">Log In!</button>
+    </div>
+    <div class="col-xs-6">
+      <button class="btn btn-success btn-block pull-right">Register!</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- Forgotten Password Form -->
+<div *ngIf="!isLogin">
+  <div class="row margin-bottom">
+    <div class="col-xs-12">
+      Forgotten your password? No problem! Enter your username and we'll send you a unique link to reset your password.
+    </div>
+  </div>
+  <div class="row margin-top">
+    <div class="col-xs-12">
+      <app-form-element [formElement]="forgottenPasswordForm.get('username')" [formGroup]="forgottenPasswordForm.formGroup"></app-form-element>
+    </div>
+  </div>
+  <div class="row buttons margin-top">
+    <div class="col-xs-6">
+      <button (click)="submitPasswordRequest()" class="btn btn-primary btn-block">Send Link</button>
+    </div>
+    <div class="col-xs-6">
+      <button (click)="toggleFormDisplay()" class="btn btn-success btn-block pull-right">Cancel!</button>
+    </div>
+  </div>
+</div>

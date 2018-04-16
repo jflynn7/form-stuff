@@ -1,0 +1,12 @@
+@import '../../meeting-notes';
+
+.attendees {
+
+  /deep/ .attendee-display-card {
+
+    &:hover {
+      box-shadow: 1px 1px 1px #c3c8ce;
+      cursor: pointer;
+    }
+  }
+}

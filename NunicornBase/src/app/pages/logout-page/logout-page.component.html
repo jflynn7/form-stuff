@@ -1,0 +1,7 @@
+<div class="container-fluid page">
+  <app-tab-set [tabItems]="userService.getUserTabs()" [activeTabTitle]="'Logout'"></app-tab-set>
+  <app-card [margin]="0" [padding]="100" class="logout-card">
+    Really, log out?<br>
+    <span (click)="userService.logout()">Yes, log me out!</span>
+  </app-card>
+</div>

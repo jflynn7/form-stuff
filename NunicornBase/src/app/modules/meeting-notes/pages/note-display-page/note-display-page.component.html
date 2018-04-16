@@ -1,0 +1,79 @@
+<div class="container page">
+  <div class="row">
+    <div class="col-xs-12 transition" [ngClass]="attendeesCollapsed ? 'col-md-10' : 'col-md-8'">
+      <app-card>
+        <div class="row">
+          <div class="col-xs-6">
+            <div class="row">
+              <div class="col-xs-6">
+                <strong>Date: </strong>
+              </div>
+              <div class="col-xs-6">
+                Thurday 12th April
+              </div>
+              <div class="col-xs-6">
+                <strong>Time: </strong>
+              </div>
+              <div class="col-xs-6">
+                2:00pm
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-6">
+            <div class="row">
+              <div class="col-xs-6">
+                <strong>Chair: </strong>
+              </div>
+              <div class="col-xs-6">
+                Joe Flynn
+              </div>
+              <div class="col-xs-6">
+                <strong>Location: </strong>
+              </div>
+              <div class="col-xs-6">
+                BTS / Onine
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-xs-12">
+            <strong>Meeting Notes</strong>
+          </div>
+        </div>
+        <div *ngFor="let noteItem of noteItems; let i = index;">
+            <app-note-item [noteItem]="noteItem" [noteIndex]="i" (output)="getAction($event)"></app-note-item>
+        </div>
+      </app-card>
+      <app-card>
+        <div class="row note-entry">
+          <div class="col-xs-12">
+            <app-form-element [formGroup]="noteItemForm.formGroup" [formElement]="noteItemForm.get('attendee')"></app-form-element>
+            <app-form-element [formGroup]="noteItemForm.formGroup" [formElement]="noteItemForm.get('note')"></app-form-element>
+            <app-form-element [formGroup]="noteItemForm.formGroup" [formElement]="noteItemForm.get('action')"></app-form-element>
+            <button (click)="addNewNote()" class="btn-block btn btn-primary">Add Note</button>
+          </div>
+        </div>
+      </app-card>
+    </div>
+    <div class="col-xs-12 transition attendees" [ngClass]="attendeesCollapsed ? 'col-md-2' : 'col-md-4'">
+      <app-card [padding]="10">
+        <div class="row">
+          <div class="col-xs-6 list-title">Attendees</div>
+          <div class="col-xs-6 list-actions" [ngClass]="{ 'collapsed' : attendeesCollapsed }"><i (click)="toggleAttendees()" class="material-icons">view_list</i></div>
+        </div>
+      </app-card>
+      <app-card *ngFor="let attendee of attendees; let i = index;" [padding]="5" [cardOptions]="attendeeCardOptions" (editEmitter)="editAttendee(i)" (closeEmitter)="removeAttendee(i)">
+        <app-attendee-display [attendee]="attendee" [collapsed]="attendeesCollapsed"></app-attendee-display>
+      </app-card>
+      <app-card [padding]="15" *ngIf="!attendeesCollapsed">
+        <h4>Add Attendee</h4>
+        <app-form-element [formGroup]="attendeeForm.formGroup" [formElement]="attendeeForm.get('name')"></app-form-element>
+        <app-form-element [formGroup]="attendeeForm.formGroup" [formElement]="attendeeForm.get('position')"></app-form-element>
+        <app-form-element [formGroup]="attendeeForm.formGroup" [formElement]="attendeeForm.get('email')"></app-form-element>
+        <button (click)="addAttendee()" class="btn-block btn btn-primary">Add Attendee</button>
+      </app-card>
+    </div>
+  </div>
+</div>

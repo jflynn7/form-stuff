@@ -1,0 +1,10 @@
+<div #cardWrapper class="card {{cardOptions.hoverClass}}">
+  <span #cardTitleContainer *ngIf="cardTitle" class="card-title">{{cardTitle}}</span>
+  <span class="close" *ngIf="cardOptions.hasClose" (click)="close()">
+    <i class="fas fa-times"></i>
+  </span>
+  <span class="close edit" *ngIf="cardOptions.hasEdit" (click)="edit()">
+    <i class="far fa-edit"></i>
+  </span>
+  <ng-content></ng-content>
+</div>

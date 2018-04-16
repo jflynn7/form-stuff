@@ -1,0 +1,22 @@
+<div class="row margin-bottom">
+  <h4 class="section-title text-center">Your Profile</h4>
+  <img class="profile-image" alt="Random Image" src="https://picsum.photos/200/?random">
+  <span class="profile-name">{{userService.getFullName()}}</span>
+  <span class="profile-role">Member since {{transformationUtils.toDate(user.registrationDate, displayDateFormat)}}</span>
+</div>
+<div class="row border-top">
+  <h4 class="section-title text-center">Edit Your Social Details</h4>
+</div>
+<div class="row border-top margin-bottom">
+  <div class="col-xs-12">
+    <app-form-section
+      [className]="'form-element margin-left'"
+      [formDetails]="userForm"
+      [formElementList]="[
+                  'facebookProfile',
+                  'twitterProfile',
+                  'googlePlusProfile',
+                  'linkedInProfile']">
+    </app-form-section>
+  </div>
+</div>

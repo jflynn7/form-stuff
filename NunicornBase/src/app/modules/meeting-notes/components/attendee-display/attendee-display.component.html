@@ -1,0 +1,11 @@
+<div class="attendee-display row">
+  <div class="attendee-avatar" [ngClass]="collapsed ? 'col-xs-12' : 'col-xs-4'">
+    <img class="avatar-image" [ngClass]="{ 'collapsed' : collapsed }" alt="{{attendee.name}}" src="{{attendee.avatar}}">
+    <span class="avatar-initials" *ngIf="collapsed">{{getInitials(attendee)}}</span>
+  </div>
+  <div class="attendee-details" [ngClass]="collapsed ? 'hidden' : 'col-xs-8'">
+    <div class="row name">{{attendee.name}}</div>
+    <div class="row position">{{attendee.position}}</div>
+    <div class="row email">{{attendee.email}}</div>
+  </div>
+</div>

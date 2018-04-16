@@ -1,0 +1,21 @@
+.list-title {
+  display: block;
+  font-weight: bold;
+}
+
+.list-actions {
+  color: grey;
+  text-align: right;
+
+  &:hover {
+    cursor: pointer;
+    color: black;
+  }
+}
+
+.transition {
+  -webkit-transition: all 200ms cubic-bezier(0.250, 0.250, 0.750, 0.750);
+  -moz-transition: all 200ms cubic-bezier(0.250, 0.250, 0.750, 0.750);
+  -o-transition: all 200ms cubic-bezier(0.250, 0.250, 0.750, 0.750);
+  transition: all 200ms cubic-bezier(0.250, 0.250, 0.750, 0.750); /* linear */
+}

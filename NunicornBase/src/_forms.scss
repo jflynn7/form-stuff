@@ -1,0 +1,131 @@
+// User Profile Form
+.form-group {
+  &.user-profile-form {
+
+    .input-label {
+      float: left;
+      padding-top: 7px;
+    }
+
+    .input-field {
+      width: 70%;
+      float: right;
+      border: 1px solid #ececec;
+      box-shadow: none;
+    }
+
+    .customGroupLabelCss {
+      // Custom group label styles
+    }
+
+    .no-fieldset {
+     border: none;
+    }
+
+    .customLegendCss {
+      // Custom legend styles
+    }
+
+    .customOptionLabelCss {
+      // Custom option label styles (radio button/checkbox etc)
+    }
+
+  }
+}
+
+// Header Search Form
+.form-group {
+  &.header-search {
+
+    .header-search-label {
+      display: none;
+    }
+
+    .header-search-input {
+      width: 200px;
+      float: right;
+      border: none;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      border-radius: 2px;
+      height: 25px;
+      font-size: 10px;
+      margin: 15px 15px;
+    }
+  }
+}
+
+// Login Form
+.form-group {
+  &.login-form {
+
+    min-height: 30px;
+
+    .input-label {
+      float: left;
+      padding-top: 7px;
+    }
+
+    .input-field {
+      width: 70%;
+      float: right;
+      border: 1px solid #ececec;
+      box-shadow: none;
+    }
+
+    .customGroupLabelCss {
+      // Custom group label styles
+    }
+
+    .rememberMe {
+      border: none;
+      box-shadow: none;
+      padding: 0;
+
+      .fieldset {
+        display: none;
+      }
+    }
+
+    .customLegendCss {
+      // Custom legend styles
+    }
+
+    .option-label {
+      padding-left: 10px;
+    }
+
+  }
+}
+
+.form-element {
+  padding: 15px 0;
+  display: block;
+}
+
+.form-array-item {
+  display: block;
+  padding: 15px 0;
+}
+
+.add {
+  margin-top: 15px !important;
+}
+
+.margin-left {
+  margin-left: 15px;
+}
+
+.margin-right {
+  margin-right: 15px;
+}
+
+.margin-bottom {
+  margin-bottom: 15px;
+}
+
+.margin-top {
+  margin-top: 15px;
+}
+
+

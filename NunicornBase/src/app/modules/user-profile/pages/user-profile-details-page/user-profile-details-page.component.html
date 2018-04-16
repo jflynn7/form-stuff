@@ -1,0 +1,84 @@
+<div class="container-fluid page" *ngIf="loggedInUser">
+  <app-tab-set [tabItems]="userService.getUserTabs()" [activeTabTitle]="'Personal Details'"></app-tab-set>
+  <div class="row" *ngIf="userForm">
+    <div class="col-xs-12">
+      <app-card [padding]="0" [margin]="0">
+        <div class="row">
+          <div class="col-xs-12 col-md-3 border-right stretch-column">
+            <!-- AVATAR SECTION -->
+            <app-user-profile-avatar-section [user]="loggedInUser"></app-user-profile-avatar-section>
+          </div>
+          <div class="col-xs-12 col-md-9">
+            <div class="row border-right">
+              <h4 class="section-title">Edit Your Personal Details</h4>
+              <span class="save" (click)="saveUserProfile()">
+                Save
+              </span>
+            </div>
+            <div class="row border-top border-right element-row">
+              <div class="col-xs-12 col-md-7">
+                <app-form-section
+                  [className]="'form-element'"
+                  [formDetails]="userForm"
+                  [formElementList]="[
+                  'firstName',
+                  'surname']">
+                </app-form-section>
+              </div>
+            </div>
+            <div class="row border-top border-right element-row">
+              <div class="col-xs-12 col-md-7">
+                <app-form-section
+                  [className]="'form-element'"
+                  [formDetails]="userForm"
+                  [formElementList]="[
+                  'dateOfBirth',
+                  'gender']">
+                </app-form-section>
+              </div>
+            </div>
+            <div class="row border-top border-right element-row">
+              <div class="col-xs-12 col-md-7">
+                <app-form-section
+                  [className]="'form-element'"
+                  [formDetails]="userForm"
+                  [formElementList]="[
+                  'nationality',
+                  'countryOfResidence']">
+                </app-form-section>
+              </div>
+            </div>
+            <div class="row border-top border-right element-row">
+              <div class="col-xs-12 col-md-7">
+                <app-form-section
+                  [className]="'form-element'"
+                  [formDetails]="userForm"
+                  [formElementList]="[
+                  'mobilePhoneNumber',
+                  'homePhoneNumber']">
+                </app-form-section>
+              </div>
+            </div>
+            <div class="row border-top border-right element-row">
+              <div class="col-xs-12 col-md-7">
+                <app-form-section
+                  [className]="'form-element'"
+                  [formDetails]="userForm"
+                  [formElementList]="[
+                  'occupation']">
+                </app-form-section>
+              </div>
+            </div>
+            <div class="row border-top border-left">
+              <div class="col-xs-12 visible-xs-block">
+                <span class="save">
+                  Save
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </app-card>
+    </div>
+  </div>
+</div>

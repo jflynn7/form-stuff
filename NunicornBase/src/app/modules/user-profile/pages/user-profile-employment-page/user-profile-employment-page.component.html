@@ -1,0 +1,25 @@
+<div class="container-fluid page">
+  <app-tab-set [tabItems]="userService.getUserTabs()" [activeTabTitle]="'Employment Details'"></app-tab-set>
+  <div class="row" *ngIf="userForm">
+    <div class="col-xs-12">
+      <app-card [padding]="0" [margin]="0">
+        <div class="row">
+          <div class="col-xs-12 col-sm-4 col-md-3 border-right stretch-column">
+            <!-- AVATAR SECTION -->
+            <app-user-profile-avatar-section [user]="loggedInUser"></app-user-profile-avatar-section>
+          </div>
+          <div class="col-xs-12 col-sm-8 col-md-9">
+            <div class="row border-right">
+              <h4 class="section-title">Edit Your Employment Details</h4>
+            </div>
+            <div class="row border-top border-right element-row">
+              <div class="col-xs-12">
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </app-card>
+    </div>
+  </div>
+</div>

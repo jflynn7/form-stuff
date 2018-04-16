@@ -1,0 +1,13 @@
+<app-card>
+
+  <div class="hover-card"
+       (mouseenter)="hover(true)"
+       (mouseleave)="hover(false)"
+       (focus)="hover(true)"
+       (blur)="hover(false)">
+  <img class="circle-image" alt="Random Image" [ngClass]="{ 'hover-state' : hovered }" src="https://picsum.photos/200/?random">
+  <div class="card-title">{{cardTitle}}</div>
+  <div class="card-info" [ngClass]="{ 'hover-state' : hovered }">Lipsum dipsum toer mipsum. Other info from icksum dipsum.</div>
+</div>
+
+</app-card>

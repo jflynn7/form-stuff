@@ -1,0 +1,11 @@
+.forgot-link {
+  text-align: right;
+  display: block;
+  font-weight: bold;
+  color: grey;
+
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline dodgerblue;
+  }
+}
