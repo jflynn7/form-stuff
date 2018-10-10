@@ -19,7 +19,7 @@ export class FormSectionComponent implements OnInit {
   @Input() formGroup: FormGroup;
   @Input() formElements: FormElement[];
 
-  @Input() isArrayForm: boolean = false;
+  @Input() isArrayForm = false;
 
   constructor() { }
 

@@ -7,13 +7,13 @@ export class User {
   surname?: string;
   userRole?: string;
   sessionXSRFtoken?: string;
-  registrationDate?: Date;
+  registrationDate?: string;
   userProfile?: UserProfile;
 
 
   constructor(data: { userId?: number, userEmail?: string, displayName?: string,
     firstName?: string, surname?: string, userProfile?: UserProfile, userRole?: string
-    registrationDate?: Date, sessionXSRFtoken?: string}) {
+    registrationDate?: string, sessionXSRFtoken?: string}) {
     this.userId = data.userId;
     this.userEmail = data.userEmail;
     this.displayName = data.displayName;
